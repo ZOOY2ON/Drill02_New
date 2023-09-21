@@ -23,14 +23,19 @@ def run_circle():
     character.draw_now(x,y)
     delay(0.01)
 
-    pass
-
 def run_rectangle():
     print('RECTANGLE')
+
+    for x in range(50.750+1,10):
+        #일단 그림을 그리자
+        clear_canvas_now()
+        grass.draw_now()
+        character.draw_now(x,90)
+        delay(0.01)
     pass
 
 while True:
-    run_circle()
+    #run_circle()
     run_rectangle()
     break
 
