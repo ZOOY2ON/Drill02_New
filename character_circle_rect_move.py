@@ -9,11 +9,11 @@ grass = load_image('glass.png')
 character = load_image('character.png')
 
 def run_circle():
-    #일단 뼈대만 생성
+    print('CIRCLE')
     pass
 
 def run_rectangle():
-    #일단 뼈대만 생성
+    print('RECTANGLE')
     pass
 
 while True:
