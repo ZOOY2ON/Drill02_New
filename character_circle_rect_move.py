@@ -8,6 +8,14 @@ open_canvas()
 grass = load_image('glass.png')
 character = load_image('character.png')
 
+def run_circle():
+    #일단 뼈대만 생성
+    pass
+
+def run_rectangle():
+    #일단 뼈대만 생성
+    pass
+
 while True:
     run_circle()
     run_rectangle()
