@@ -6,13 +6,13 @@ import math
 
 open_canvas()
 
-#grass = load_image('grass.png')
-#character = load_image('character.png')
+grass = load_image('grass.png')
+character = load_image('character.png')
 
 def rander_frame(x,y):
     clear_canvas_now()
-    #grass.draw_now()
-    #character.draw_now(x,y)
+    grass.draw_now()
+    character.draw_now(x,y)
     delay(0.01)
     print(x,y)
 
