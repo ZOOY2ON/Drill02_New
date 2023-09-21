@@ -11,9 +11,10 @@ open_canvas()
 
 def rander_frame(x,y):
     clear_canvas_now()
-    grass.draw_now()
-    character.draw_now(x,y)
+    #grass.draw_now()
+    #character.draw_now(x,y)
     delay(0.01)
+    print(x,y)
 
 def run_circle():
 
@@ -29,21 +30,27 @@ def run_circle():
 def run_rectangle():
     print('RECTANGLE')
 
-    for x in range(50.750+1,10):
+    for x in range(50,750+1,10):
         rander_frame(x,90)
 
-    for x in range(750,50+1,-10):
+    for y in range(90,550+1,10):
+        rander_frame(750,y)
+
+    for x in range(750,50-1,-10):
         rander_frame(x,550)
-    pass
+
+    for y in range(550,90-1,-10):
+        rander_frame(50,y)
 
 def bug_check():
-    for x in range(750,50+1,-10):
+    for x in range(750,50-1,-10):
         print (x)
 
 while True:
+
     #run_circle()
-    #run_rectangle()
+    run_rectangle()
     break
 
-bug_check()
+#bug_check()
 close_canvas()
