@@ -6,8 +6,8 @@ import math
 
 open_canvas()
 
-grass = load_image('grass.png')
-character = load_image('character.png')
+#grass = load_image('grass.png')
+#character = load_image('character.png')
 
 def run_circle():
 
@@ -32,11 +32,23 @@ def run_rectangle():
         grass.draw_now()
         character.draw_now(x,90)
         delay(0.01)
+
+    for x in range(750,50+1,-10):
+        #일단 그림을 그리자
+        clear_canvas_now()
+        grass.draw_now()
+        character.draw_now(x,0)
+        delay(0.01)
     pass
+
+def bug_check():
+    for x in range(750,50+1,-10):
+        print (x)
 
 while True:
     #run_circle()
-    run_rectangle()
+    #run_rectangle()
     break
 
+bug_check()
 close_canvas()
