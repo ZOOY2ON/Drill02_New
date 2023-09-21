@@ -16,41 +16,46 @@ def rander_frame(x,y):
     delay(0.01)
     print(x,y)
 
-def run_circle():
+from pico2d import *
+import math
 
-    center_x, center_y, r = 400, 300, 200
+open_canvas()
 
-    for deg in range(0,360,5):
-        x = center_x + r*math.cos(math.radians(deg))
-        y = center_y + r*math.sin(math.radians(deg))
+glass = load_image('grass.png')
+character = load_image('character.png')
 
-    rander_frame(x,y)
+def render_frame(x,y):
+    clear_canvas_now()
+    glass.draw_now(400,30)
+    character.draw_now(x, y)
+    delay(0.01)
+    
+def move_circle(): 
+    
+    #일단 그림을 그리자
+    cx, cy, r = 800 // 2, 600 // 2, 200
+    
+    for degree in range(0,360,5):
+        x = cx + r * math.cos(math.radians(degree))
+        y = cy + r * math.sin(math.radians(degree))
+        render_frame(x,y)
 
+def move_rectangle():
+    for x in range(50,750+1,10): #하단 좌->우
+        render_frame(x,90)
 
-def run_rectangle():
-    print('RECTANGLE')
-
-    for x in range(50,750+1,10):
-        rander_frame(x,90)
-
-    for y in range(90,550+1,10):
-        rander_frame(750,y)
-
-    for x in range(750,50-1,-10):
-        rander_frame(x,550)
-
-    for y in range(550,90-1,-10):
-        rander_frame(50,y)
-
-def bug_check():
-    for x in range(750,50-1,-10):
-        print (x)
-
+    for y in range(90, 510+1, 10): # 우측 하->상
+        render_frame(750,y)
+        
+    for x in range(750,50-1,-10): #상단 우->좌
+        render_frame(x,510)
+        
+    for y in range(510, 90-1, -10): # 좌측 상->하
+        render_frame(50,y)
+        
 while True:
-
-    #run_circle()
-    run_rectangle()
+    #move_circle()
+    move_rectangle()
     break
-
-#bug_check()
+    
 close_canvas()
