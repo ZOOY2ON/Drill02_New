@@ -9,6 +9,12 @@ open_canvas()
 #grass = load_image('grass.png')
 #character = load_image('character.png')
 
+def rander_frame(x,y):
+    clear_canvas_now()
+    grass.draw_now()
+    character.draw_now(x,y)
+    delay(0.01)
+
 def run_circle():
 
     center_x, center_y, r = 400, 300, 200
@@ -17,28 +23,17 @@ def run_circle():
         x = center_x + r*math.cos(math.radians(deg))
         y = center_y + r*math.sin(math.radians(deg))
 
-    #일단 그림을 그리자
-    clear_canvas_now()
-    grass.draw_now()
-    character.draw_now(x,y)
-    delay(0.01)
+    rander_frame(x,y)
+
 
 def run_rectangle():
     print('RECTANGLE')
 
     for x in range(50.750+1,10):
-        #일단 그림을 그리자
-        clear_canvas_now()
-        grass.draw_now()
-        character.draw_now(x,90)
-        delay(0.01)
+        rander_frame(x,90)
 
     for x in range(750,50+1,-10):
-        #일단 그림을 그리자
-        clear_canvas_now()
-        grass.draw_now()
-        character.draw_now(x,0)
-        delay(0.01)
+        rander_frame(x,550)
     pass
 
 def bug_check():
